@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
 import com.yinkin.sparkle.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +37,10 @@ class Step4Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_step4, container, false)
+        val root = inflater.inflate(R.layout.fragment_step4, container, false)
+        val btn_clear: Button = root.findViewById(R.id.clear4Button)
+        btn_clear.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.serviceStep1Fragment))
+        return root
     }
 
     companion object {

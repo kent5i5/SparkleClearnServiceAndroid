@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.navigation.ActivityNavigator
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yinkin.sparkle.MainActivity
@@ -45,6 +47,13 @@ class StartScreenFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_start_screen, container, false)
 
             //root.findViewById(R.id.nav_view)
+
+        // get reference to buttons
+        val btn_click_me: Button = root.findViewById(R.id.loginButton)
+        val btn_service: Button = root.findViewById(R.id.serviceButton)
+        // set on-click listeners
+        btn_click_me.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.loginFragment));
+        btn_service.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.serviceStep1Fragment))
         return root
     }
 
