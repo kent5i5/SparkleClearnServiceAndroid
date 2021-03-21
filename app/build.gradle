@@ -54,4 +54,10 @@ dependencies {
     //material desgin
     implementation "com.google.android.material:material:$version_material"
 
+    //Google Firebase
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
 }
+
+apply plugin: 'com.google.gms.google-services'
