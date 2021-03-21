@@ -76,4 +76,8 @@
         android:name="com.yinkin.sparkle.ui.account.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.yinkin.sparkle.ui.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

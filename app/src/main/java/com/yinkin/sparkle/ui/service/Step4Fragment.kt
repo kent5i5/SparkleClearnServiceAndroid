@@ -39,7 +39,10 @@ class Step4Fragment : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_step4, container, false)
         val btn_clear: Button = root.findViewById(R.id.clear4Button)
+        val doneButton: Button = root.findViewById(R.id.doneButton)
         btn_clear.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.serviceStep1Fragment))
+        doneButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.navigation_home))
+
         return root
     }
 

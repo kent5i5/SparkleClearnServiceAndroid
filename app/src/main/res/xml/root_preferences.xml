@@ -1,0 +1,73 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <Preference-->
+<!--        android:key="preference_key"-->
+<!--        android:title="Setting"-->
+<!--        android:summary="make your preferences here" />-->
+<!--    <Preference android:layout="@layout/fragment_preference_buttons" android:key="loginButtons"></Preference>-->
+
+    <com.yinkin.sparkle.ui.CustomPreference
+        app:key="custom_preference_key"
+        app:title="This is a custom preference" />
+
+    <Preference
+        app:key="activity"
+    app:title="HOME">
+    <intent
+        android:targetPackage="com.yinkin.sparkle"
+        android:targetClass="com.yinkin.sparkle.MainActivity"/>
+    </Preference>
+
+
+    <PreferenceCategory
+        app:title="@string/title_first_section">
+
+        <CheckBoxPreference
+            app:key="checkbox_preference"
+            app:title="@string/title_checkbox_preference"
+            app:defaultValue="@string/default_checkbox_preference"/>
+
+        <SeekBarPreference
+        android:key="seekbar"
+        android:title="Seek bar!"
+        android:max="10"
+        android:defaultValue="5" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/signature_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>
